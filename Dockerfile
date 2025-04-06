@@ -4,11 +4,6 @@ WORKDIR /project
 
 COPY . .
 
-CMD unity-editor \
-    -batchmode \
-    -nographics \
-    -projectPath /project \
-    -runTests \
-    -testPlatform EditMode \
-    -testResults /project/TestResults.xml \
-    -quit
+RUN chmod +x ./build.sh
+
+CMD ["./build.sh"]
