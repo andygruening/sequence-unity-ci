@@ -5,6 +5,9 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
+      args:
+        - UNITY_VERSION=${UNITY_VERSION}
+        - UNITY_IMAGE_VERSION=${UNITY_IMAGE_VERSION}
     healthcheck:
       test: ["CMD", "./healthcheck.sh"]
       interval: 5s
