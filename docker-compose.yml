@@ -1,9 +1,9 @@
 version: '3.8'
 
 services:
-  unreal-builder:
+  run-tests:
     build:
-      context: .
+      context: ./
       dockerfile: Dockerfile
     healthcheck:
       test: ["CMD", "./healthcheck.sh"]
@@ -11,10 +11,5 @@ services:
       timeout: 5s
       retries: 5
     volumes:
-      - .:/
-    command: ./runTests.sh
-    deploy:
-      resources:
-        limits:
-          cpus: '2'
-          memory: 8000M
+      - .:/sequence/
+    command: ./sequence/runTests.sh
