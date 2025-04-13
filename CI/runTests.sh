@@ -8,3 +8,5 @@ CMD unity-editor \
     -testPlatform EditMode \
     -testResults /project/TestResults.xml \
     -quit
+
+type nul > .\shared\flag
